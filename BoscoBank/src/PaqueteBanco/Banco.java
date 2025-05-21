@@ -18,13 +18,13 @@ public class Banco implements Serializable {
 	private static final String SE_HA_PRODUCIDO_UN_ERROR_AL_LEER_EL_ARCHIVO = "Se ha producido un error al leer el archivo:";
 	private static final long serialVersionUID = 1L; 
     private String nombre;
-    private final Cuenta[] cuentas;
+    private final operable[] cuentas;
     private int numeroCuentas;
     private static final int MAX_CUENTAS = 100;
 
     public Banco(String nombre) {
         this.nombre = nombre;
-        cuentas = new Cuenta[MAX_CUENTAS];
+        cuentas = new operable[MAX_CUENTAS];
         this.numeroCuentas = 0;
     }
 
@@ -92,7 +92,7 @@ public class Banco implements Serializable {
     }
 
     public boolean ingresar(String codigo, double importe) {
-        Cuenta c = localizarCuenta(codigo);
+        operable c = localizarCuenta(codigo);
         if (c == null) // no se encuentra una cuenta con ese codigo
         {
             return false;
@@ -103,7 +103,7 @@ public class Banco implements Serializable {
     }
 
     public boolean retirar(String codigo, double importe) {
-        Cuenta c = localizarCuenta(codigo);
+        operable c = localizarCuenta(codigo);
         if (c == null) // no se encuentra una cuenta con ese codigo
         {
             return false;
@@ -113,12 +113,8 @@ public class Banco implements Serializable {
         }
     }
 
-    public boolean existeCuenta(String codigo) {
-        return (localizarCuenta(codigo) != null);
-    }
-
     public String consultarCuenta(String codigo) {
-        Cuenta c = localizarCuenta(codigo);
+        operable c = localizarCuenta(codigo);
         if (c != null) {
             return c.toString();
         } else {
@@ -127,7 +123,7 @@ public class Banco implements Serializable {
     }
 
     public double informaSaldo(String codigo) {
-        Cuenta c = localizarCuenta(codigo);
+        operable c = localizarCuenta(codigo);
         if (c != null) {
             return c.getSaldo();
         } else {
@@ -135,7 +131,7 @@ public class Banco implements Serializable {
         }
     }
 
-    private Cuenta localizarCuenta(String codigo) {
+    private operable localizarCuenta(String codigo) {
         // se busca secuencialmente la cuenta con un código       
          {for (int i=0;i<this.numeroCuentas;i++){
             if (cuentas[i].getIban().equals(codigo)) 

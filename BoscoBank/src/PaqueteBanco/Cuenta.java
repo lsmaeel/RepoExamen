@@ -6,6 +6,8 @@ import java.io.Serializable;
  *
  * @author Ismael
  */
+
+
 public class Cuenta implements Serializable{
 
     private String iban;

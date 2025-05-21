@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Antonio
+ * @author Ismael
  */
 public class Cuenta implements Serializable{
 

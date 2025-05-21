@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Antonio
+ * @author Ismael
  */
 public class Banco implements Serializable {
     private static final long serialVersionUID = 1L; 

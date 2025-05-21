@@ -1,4 +1,4 @@
-package banco;
+package PaqueteBanco;
 
 import java.io.Serializable;
 

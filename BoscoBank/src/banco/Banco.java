@@ -35,7 +35,7 @@ public class Banco implements Serializable {
         }
 
     }
-
+    //comentario
     // Método para deserializar el curso
     public static Banco cargarEstado(String nombreArchivo) throws IOException, ClassNotFoundException {
         Banco banco;
